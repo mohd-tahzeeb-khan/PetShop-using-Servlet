@@ -15,6 +15,10 @@
     <servlet-name>sell</servlet-name>
     <servlet-class>sell</servlet-class>
     </servlet>
+    <servlet>
+    <servlet-name>delete</servlet-name>
+    <servlet-class>delete</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>admin</servlet-name>
         <url-pattern>/admin</url-pattern>
@@ -24,12 +28,16 @@
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-    <servlet-name>addnew</servlet-name>
-    <url-pattern>/addnew</url-pattern>
+        <servlet-name>addnew</servlet-name>
+        <url-pattern>/addnew</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-    <servlet-name>sell</servlet-name>
-    <url-pattern>/sell</url-pattern>
+        <servlet-name>sell</servlet-name>
+        <url-pattern>/sell</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>delete</servlet-name>
+        <url-pattern>/delete</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
