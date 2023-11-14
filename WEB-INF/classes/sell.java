@@ -1,3 +1,4 @@
+import javax.print.attribute.standard.RequestingUserName;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.*;
@@ -34,11 +35,15 @@ public void doPost(HttpServletRequest request, HttpServletResponse response)thro
             int i=updatestatement.executeUpdate();
             // out.print(i);
              if(i>0){
-                 out.println("Animal Sold");
+                 RequestDispatcher rd=request.getRequestDispatcher("admin");
+                 rd.forward(request, response);
+             }else{
+                out.print("System has encountered some error. Please check your database.");
+                RequestDispatcher rd=request.getRequestDispatcher("sell");
+                rd.include(request, response);
              }
         } catch (Exception e) {
-            out.print(e);
-            // TODO: handle exception
+            out.print("Check your database "+e);
         }
     }
 }
