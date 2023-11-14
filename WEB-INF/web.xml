@@ -19,6 +19,10 @@
     <servlet-name>delete</servlet-name>
     <servlet-class>delete</servlet-class>
     </servlet>
+    <servlet>
+    <servlet-name>report</servlet-name>
+    <servlet-class>report</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>admin</servlet-name>
         <url-pattern>/admin</url-pattern>
@@ -39,6 +43,11 @@
         <servlet-name>delete</servlet-name>
         <url-pattern>/delete</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>report</servlet-name>
+        <url-pattern>/report</url-pattern>
+    </servlet-mapping>
+    
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
