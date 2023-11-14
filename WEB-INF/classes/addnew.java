@@ -5,7 +5,6 @@ import java.sql.*;
 public class addnew extends HttpServlet{
     public void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
         Connection con;
-        System.out.println("teri maa ki chut");
         PrintWriter out=response.getWriter();
         response.setContentType("text/html");
         String animal=request.getParameter("animal");
