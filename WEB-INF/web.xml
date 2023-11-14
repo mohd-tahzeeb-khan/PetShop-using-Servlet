@@ -11,6 +11,10 @@
     <servlet-name>addnew</servlet-name>
     <servlet-class>addnew</servlet-class>
     </servlet>
+    <servlet>
+    <servlet-name>sell</servlet-name>
+    <servlet-class>sell</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>admin</servlet-name>
         <url-pattern>/admin</url-pattern>
@@ -22,6 +26,10 @@
     <servlet-mapping>
     <servlet-name>addnew</servlet-name>
     <url-pattern>/addnew</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>sell</servlet-name>
+    <url-pattern>/sell</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
