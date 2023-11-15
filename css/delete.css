@@ -5,9 +5,15 @@
     margin: auto;
     border: 2px solid rgba(0, 0, 0, 0.524);
 }
+.main .heading h1{
+    color: #fff;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 38px;
+}
 .center{
     width: 20%;
-    margin: 15% auto;
+    margin: 5% auto;
     border: 2px solid rgba(0, 34, 255, 0.766);
     background-color: skyblue;
 }

@@ -32,7 +32,7 @@ public class report extends HttpServlet{
             out.println("<td style='border:2px solid #000; padding:3px 5px;'>" + price + "</td>");
             out.println("</tr>");
         }
-        out.print("</table>");
+            out.print("</table>");
     }catch(Exception e){
         out.println(e);
     }
