@@ -14,18 +14,19 @@ public void doPost(HttpServletRequest request, HttpServletResponse response)thro
         try {
             Class.forName("org.sqlite.JDBC");
             con=DriverManager.getConnection("jdbc:sqlite:C://Program Files//Apache Software Foundation//Tomcat 9.0_Tomcat//webapps//petshop//WEB-INF//classes//petshop.db");
-            String query_getting = "SELECT count FROM pets WHERE animal = ? AND breed = ?";
+            String query_getting = "SELECT * FROM pets WHERE animal = ? AND breed = ?";
             String query_update="UPDATE pets SET count = ? WHERE animal = ? AND breed=?";
+            String insertQuery="insert into sells values(?,?,?,?,?);";
             PreparedStatement selectingstatement = con.prepareStatement(query_getting);
             PreparedStatement updatestatement=con.prepareStatement(query_update);
-
+            PreparedStatement insertintosells=con.prepareStatement(insertQuery);
             selectingstatement.setString(1, animal);
             selectingstatement.setString(2, breed);
             ResultSet results = selectingstatement.executeQuery();
             results.next();
             int numAnimals = results.getInt("count");
+
             // out.println(numAnimals);
-            results.close();
             // out.println(no);
             int count=numAnimals-Integer.parseInt(no);
             // out.println(count);
@@ -33,6 +34,18 @@ public void doPost(HttpServletRequest request, HttpServletResponse response)thro
             updatestatement.setString(2, animal);
             updatestatement.setString(3, breed);
             int i=updatestatement.executeUpdate();
+            String animal_get =results.getString("animal");
+            String breed_get=results.getString("breed");
+            String color=results.getString("colour");
+            int price=results.getInt("price");
+            insertintosells.setString(1, animal_get);
+            insertintosells.setString(2, breed_get);
+            insertintosells.setString(3, color);
+            insertintosells.setInt(4, price);
+            insertintosells.setInt(5,Integer.parseInt(no));
+            insertintosells.executeUpdate();
+            
+            results.close();
             // out.print(i);
              if(i>0){
                  RequestDispatcher rd=request.getRequestDispatcher("admin");
