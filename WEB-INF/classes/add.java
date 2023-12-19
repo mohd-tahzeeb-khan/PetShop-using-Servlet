@@ -13,7 +13,7 @@ public class add extends HttpServlet{
         String no=request.getParameter("no");
         try {
             Class.forName("org.sqlite.JDBC");
-            con=DriverManager.getConnection("jdbc:sqlite:C://Program Files//Apache Software Foundation//Tomcat 9.0_Tomcat//webapps//petshop//WEB-INF//classes//petshop.db");      
+            con=DriverManager.getConnection("jdbc:sqlite:C://Program Files//Apache Software Foundation//Tomcat 9.0//webapps//petshop//WEB-INF//classes//petshop.db");      
             String query_getting = "SELECT count FROM pets WHERE animal = ? AND breed = ? AND colour=?";
             String query_update="UPDATE pets SET count = ? WHERE animal = ? AND breed=? AND colour=?";
             PreparedStatement updatestatement=con.prepareStatement(query_update);
