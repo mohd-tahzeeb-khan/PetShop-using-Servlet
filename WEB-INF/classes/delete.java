@@ -12,7 +12,7 @@ public class delete extends HttpServlet{
         String colour=request.getParameter("colour");
         try {
             Class.forName("org.sqlite.JDBC");
-            con=DriverManager.getConnection("jdbc:sqlite:C://Program Files//Apache Software Foundation//Tomcat 9.0_Tomcat//webapps//petshop//WEB-INF//classes//petshop.db");
+            con=DriverManager.getConnection("jdbc:sqlite:C://Program Files//Apache Software Foundation//Tomcat 9.0//webapps//petshop//WEB-INF//classes//petshop.db");
             PreparedStatement ps=con.prepareStatement("delete from pets where animal=? and breed=? and colour=?;");
             ps.setString(1, animal);
             ps.setString(2, breed);
