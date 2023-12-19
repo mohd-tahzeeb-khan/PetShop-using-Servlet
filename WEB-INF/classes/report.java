@@ -10,7 +10,7 @@ public class report extends HttpServlet{
         Connection con;
         try {
             Class.forName("org.sqlite.JDBC");
-            con=DriverManager.getConnection("jdbc:sqlite:C://Program Files//Apache Software Foundation//Tomcat 9.0_Tomcat//webapps//petshop//WEB-INF//classes//petshop.db");
+            con=DriverManager.getConnection("jdbc:sqlite:C://Program Files//Apache Software Foundation//Tomcat 9.0//webapps//petshop//WEB-INF//classes//petshop.db");
             Statement state=con.createStatement();
             String query_select="SELECT * FROM sells;";
         ResultSet data = state.executeQuery(query_select);
